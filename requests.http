@@ -1,0 +1,53 @@
+### Check the API
+GET http://localhost:3000/api/health
+
+### Get all skill listings
+GET http://localhost:3000/api/skills
+
+### Get listing number 1
+GET http://localhost:3000/api/skills/1
+
+### Add a skill listing
+POST http://localhost:3000/api/skills
+Content-Type: application/json
+
+{
+  "name": "Alex",
+  "teaches": "Photography",
+  "wantsToLearn": "Spanish",
+  "category": "Creative",
+  "online": true
+}
+
+### Update listing number 1
+PUT http://localhost:3000/api/skills/1
+Content-Type: application/json
+
+{
+  "name": "Maya",
+  "teaches": "Watercolor painting",
+  "wantsToLearn": "Piano",
+  "category": "Creative",
+  "online": true
+}
+
+### Delete listing number 2
+DELETE http://localhost:3000/api/skills/2
+
+### Test validation: missing name
+POST http://localhost:3000/api/skills
+Content-Type: application/json
+
+{
+  "name": "",
+  "teaches": "Photography",
+  "wantsToLearn": "Spanish",
+  "category": "Creative",
+  "online": true
+}
+
+### Test error: skill not found
+GET http://localhost:3000/api/skills/999
+
+### Delete duplicate listing
+DELETE http://localhost:3000/api/skills/3
